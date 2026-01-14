@@ -29,6 +29,18 @@ Run the installer script with one of the following flags:
 
 The uninstall command will prompt you whether you want to remove everything (binary, libdispatch, related packages) or just the Blockheads server and libdispatch.
 
+### Requirements
+
+- Debian or Ubuntu-based system
+- sudo privileges
+- Internet connection to download packages and the binary
+
+### Notes
+
+- The uninstall process removes installed packages detected based on the libraries required by the Blockheads server.
+- If libdispatch was built and installed from source, the uninstall script attempts to remove related files from `/usr/local/lib`.
+- Please review prompts carefully during uninstall to avoid accidental removal.
+  
 ### Blockheads server binary
 
 Once installed, you can run the server binary with `./blockheads_server171`.
