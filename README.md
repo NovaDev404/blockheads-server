@@ -78,3 +78,14 @@ Run the server normally by just executing:
 ---
 
 Enjoy your Blockheads server!
+
+# License
+This repository is licensed under the MIT License (see LICENSE).
+
+The MIT License applies to:
+- installer.sh
+- README.md
+
+The file `blockheads_server171` is a precompiled third-party binary and is
+NOT covered by the MIT License. It is not created, owned, or maintained by
+NovaDev404. All rights to this binary remain with its original author(s).
