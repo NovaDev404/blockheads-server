@@ -1,5 +1,10 @@
 # Blockheads Server Installer
 
+This repository contains two files:
+
+- `installer.sh`: A Bash script to install or uninstall the Blockheads server and its dependencies.
+- `blockheads_server171`: The Blockheads server binary.
+
 To get started, download the installer script with:
 
     curl -s -o installer.sh https://cdn.jsdelivr.net/gh/NovaDev404/blockheads-server@main/installer.sh
