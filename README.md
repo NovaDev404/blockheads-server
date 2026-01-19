@@ -68,6 +68,7 @@ Once installed, you can run the server binary with `./blockheads_server171`.
         --custom-rules RULES (-C) (optional) used when creating a new world to sepecify that the world should be created with custom rules enabled. RULES is a json string containing world generation rules.
         --convert-to-custum-rules (-V) (optional) used when loading a world to sepecify that the world should be converted from a vanilla world to a custom rules world.
         --expert-mode (-e) (optional) used when creating a world to select expert mode.
+        --no-exit  (optional) prevents the server from shutting down after all players have disconnected.
         --help (-h) display this help text
 
 Run the server normally by just executing:
