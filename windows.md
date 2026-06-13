@@ -184,7 +184,7 @@ If your internet service provider supports IPv6, you can use your IPv6 address d
 Forward port 15151 from your router to your Windows machine.
 
 **Steps:**
-1. Log into your router's admin panel (usually at `192.168.1.1` or `192.168.0.1`)
+1. Log into your router's admin panel (usually at `192.168.1.1`, `192.168.0.1`, or `10.1.1.1`)
 2. Find the "Port Forwarding" or "Virtual Server" section
 3. Create a new rule:
    - External port: 15151
