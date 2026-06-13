@@ -75,6 +75,9 @@ Run the server normally by just executing:
 
     ./blockheads_server171
 
+## Running on Windows
+
+For detailed instructions on running the Blockheads server on Windows 10 and Windows 11 using WSL, including port forwarding configuration, see the [Windows Setup Guide](windows.md).
 
 ---
 
