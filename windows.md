@@ -147,11 +147,81 @@ Now the port forwarding will be automatically configured every time you log in.
 Once port forwarding is set up, other devices on your network can connect to your Blockheads server using:
 
 - **Windows IP address** and port 15151
-- Example: `192.168.1.100:15151`
+- Example: `192.168.1.100:15151` or `10.1.1.204:15151`
 
-To find your Windows IP address:
-- Open Command Prompt and run: `ipconfig`
-- Look for the IPv4 Address under your network adapter
+### Finding Your Local IP Address
+
+Your local IP address (the IP other devices on your network use to connect) is your Windows machine's IP address, not the WSL IP.
+
+**To find your Windows IP address:**
+
+1. Open Command Prompt or PowerShell
+2. Run: `ipconfig`
+3. Look for the IPv4 Address under your active network adapter (Ethernet or Wi-Fi)
+
+Common local IP formats:
+- `192.168.x.x` (most common home networks)
+- `10.x.x.x` (enterprise or some home networks)
+- `172.16.x.x` to `172.31.x.x` (less common)
+
+This is the IP address other devices on your local network should use to connect to your Blockheads server.
+
+## Public Access (Outside Your Local Network)
+
+By default, your Blockheads server is only accessible from devices within your local network (LAN). To make it accessible from outside (e.g., from friends' homes, mobile data, etc.), you have three options:
+
+### Option 1: IPv6 (Recommended if Available)
+
+If your internet service provider supports IPv6, you can use your IPv6 address directly without additional configuration.
+
+**To find your IPv6 address:**
+1. Visit a site like [test-ipv6.com](https://test-ipv6.com) to check if you have IPv6
+2. If available, use `ipconfig` in Command Prompt to find your IPv6 address
+3. Share this IPv6 address with port 15151 (e.g., `[2001:db8::1]:15151`)
+
+### Option 2: Router Port Forwarding
+
+Forward port 15151 from your router to your Windows machine.
+
+**Steps:**
+1. Log into your router's admin panel (usually at `192.168.1.1` or `192.168.0.1`)
+2. Find the "Port Forwarding" or "Virtual Server" section
+3. Create a new rule:
+   - External port: 15151
+   - Internal port: 15151
+   - Internal IP: Your Windows local IP (e.g., `192.168.1.100`)
+   - Protocol: TCP
+4. Save and apply changes
+5. Share your public IP address with port 15151
+
+**To find your public IP:**
+- Visit a site like [whatismyipaddress.com](https://whatismyipaddress.com)
+
+⚠️ **Security Note:** Port forwarding exposes your server to the internet. Consider:
+- Using a strong password for your server
+- Keeping the server updated
+- Monitoring logs for suspicious activity
+- Using a firewall to restrict access
+
+### Option 3: Tunneling Services (Easiest and Safest)
+
+Use a tunneling service that provides a public URL without router configuration.
+
+**Popular options:**
+- **ngrok**: Creates a secure tunnel to your localhost
+  - Download: [ngrok.com](https://ngrok.com)
+  - Run: `ngrok tcp 15151`
+  - Share the provided URL (e.g., `tcp://0.tcp.ngrok.io:12345`)
+
+- **Cloudflare Tunnel**: Free, secure, no software installation
+  - Use Cloudflare's zero-trust service to expose your server
+  - Works with your own domain if you have one
+
+- **Tailscale**: Creates a private network between devices
+  - Install Tailscale on both the server and client devices
+  - Connects directly without exposing to public internet
+
+**Recommendation:** For most users, **ngrok** or **Tailscale** is the easiest and safest option for occasional public access. For permanent public servers, consider router port forwarding with proper security measures.
 
 ## Uninstalling
 
