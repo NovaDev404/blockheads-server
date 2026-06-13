@@ -48,7 +48,7 @@ Start the Blockheads server:
 
 By default, the server runs on port 15151.
 
-## Port Forwarding (For Network Access)
+## Local Forwarding (For Network Access)
 
 To make your Blockheads server accessible from other devices on your local network (LAN), you need to forward ports from Windows to WSL.
 
